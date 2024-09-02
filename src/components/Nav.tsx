@@ -4,10 +4,13 @@ import Image from 'next/image';
 import logo from '../../public/logo.png';
 import NavLink from './NavLink';
 import { Button } from './ui/button';
+import { Menu } from 'lucide-react';
+import useSidebar from '@/Services/SidebarStore';
+import NavButtons from './NavButtons';
 
 const Nav = () => {
   return (
-    <div className="bg-mycardbg h-16 w-full">
+    <div className="bg-mycardbg h-16 md:h-20 lg:h-24 w-full">
       <Wrapper className="h-full flex items-center justify-between px-4">
         <div className="flex items-center gap-16">
           <div className="flex items-center gap-3 cursor-pointer">
@@ -20,9 +23,11 @@ const Nav = () => {
                 className="object-contain"
               />
             </div>
-            <p className="text-myaccent text-3xl font-main font-bold">Clause</p>
+            <p className="text-myaccent text-2xl md:text-3xl  font-main font-bold">
+              Clause
+            </p>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             <NavLink
               text="Solutions"
               more
@@ -37,22 +42,7 @@ const Nav = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-x-4">
-          <Button
-            variant={'default'}
-            size={'lg'}
-            className="bg-white hover:bg-white text-myaccent text-base font-default font-semibold rounded-lg shadow-lg px-4"
-          >
-            Log In
-          </Button>
-          <Button
-            variant={'default'}
-            size={'lg'}
-            className="bg-myaccent hover:bg-myaccent/80 text-myaccent2 text-base font-main font-semibold rounded-lg shadow-lg"
-          >
-            Start Now
-          </Button>
-        </div>
+        <NavButtons />
       </Wrapper>
     </div>
   );
