@@ -10,7 +10,7 @@ import NavButtons from './NavButtons';
 
 const Nav = () => {
   return (
-    <div className="bg-mycardbg h-16 md:h-20 lg:h-24 w-full">
+    <div className=" h-16 md:h-20  w-full">
       <Wrapper className="h-full flex items-center justify-between px-4">
         <div className="flex items-center gap-16">
           <div className="flex items-center gap-3 cursor-pointer">

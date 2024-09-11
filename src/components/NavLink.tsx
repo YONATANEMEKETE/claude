@@ -19,7 +19,7 @@ const NavLink = ({ more = false, text, links }: Props) => {
         </div>
 
         <div
-          className="absolute top-12 -left-16  opacity-0 peer-hover:opacity-100 peer-hover:top-6 peer-hover:z-10 hover:z-10 hover:top-6 hover:opacity-100
+          className="absolute top-12 -left-8 opacity-0 peer-hover:opacity-100 peer-hover:top-6 peer-hover:z-10 hover:z-10 hover:top-6 hover:opacity-100
         p-1 w-[200px] bg-mycardbg  shadow-lg rounded-lg border border-myaccent transition-all duration-200"
         >
           {links?.map((link) => (
