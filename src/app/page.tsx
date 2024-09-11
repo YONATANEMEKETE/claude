@@ -6,7 +6,7 @@ import Trusted from '@/components/Trusted';
 
 export default function Home() {
   return (
-    <main className="font-default relative">
+    <main className="font-default relative overflow-clip">
       <Nav />
       <Sidebar />
       <Hero />
