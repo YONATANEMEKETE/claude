@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import FeaturesChart1 from './FeaturesChart1';
 import FeaturesCard from './FeaturesCard';
 import Card1 from './Card1';
+import Card2 from './Card2';
 
 const Features = () => {
   return (
@@ -64,6 +65,7 @@ const Features = () => {
           <FeaturesCard
             title="Task management"
             description="Discuss contract queries, manage tasks, secure approvals and track progress in the workplace"
+            below={<Card2 />}
           />
         </div>
       </div>
