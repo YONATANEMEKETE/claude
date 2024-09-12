@@ -1,6 +1,7 @@
 import { Zap } from 'lucide-react';
 import React from 'react';
 import { Button } from './ui/button';
+import HeroAvatar from './HeroAvatar';
 
 const Hero = () => {
   return (
@@ -46,6 +47,27 @@ const Hero = () => {
           </Button>
         </div>
       </div>
+
+      <HeroAvatar
+        position="top-20 left-40"
+        image="https://ik.imagekit.io/6qizpphtd1/Claude/34818.jpg"
+        className="top-3/4 left-full rotate-180"
+      />
+      <HeroAvatar
+        position="top-20 right-40"
+        image="https://ik.imagekit.io/6qizpphtd1/Claude/5677.jpg"
+        className="top-3/4 right-full -rotate-90"
+      />
+      <HeroAvatar
+        position="bottom-10 left-60"
+        image="https://ik.imagekit.io/6qizpphtd1/Claude/129417.jpg"
+        className="bottom-3/4 left-full rotate-90"
+      />
+      <HeroAvatar
+        position="bottom-10 right-60"
+        image="https://ik.imagekit.io/6qizpphtd1/Claude/42003.jpg"
+        className="bottom-3/4 right-full rotate-0"
+      />
     </main>
   );
 };
