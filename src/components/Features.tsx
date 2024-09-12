@@ -2,6 +2,8 @@ import { Grid2x2X, LayoutPanelLeft, Zap } from 'lucide-react';
 import React from 'react';
 import { Button } from './ui/button';
 import FeaturesChart1 from './FeaturesChart1';
+import FeaturesCard from './FeaturesCard';
+import Card1 from './Card1';
 
 const Features = () => {
   return (
@@ -50,6 +52,19 @@ const Features = () => {
           </div>
 
           <FeaturesChart1 />
+        </div>
+
+        <div className="max-w-[1200px] mx-auto flex justify-between">
+          <FeaturesCard
+            title="Smart notifications"
+            description="Easily accessible from the notification center, calendar or email with
+        the relevant activities."
+            below={<Card1 />}
+          />
+          <FeaturesCard
+            title="Task management"
+            description="Discuss contract queries, manage tasks, secure approvals and track progress in the workplace"
+          />
         </div>
       </div>
     </div>
