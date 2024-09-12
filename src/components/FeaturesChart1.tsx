@@ -3,7 +3,7 @@ import React from 'react';
 
 const FeaturesChart1 = () => {
   return (
-    <div className="absolute bottom-[2px] right-[2px] h-[80%] bg-white w-[500px] rounded-br-xl">
+    <div className="hidden lg:block absolute z-0 bottom-[2px] right-[2px] h-[80%] bg-white w-[500px] rounded-br-xl">
       <div className="px-6 py-6 border-b border-mycardbg flex items-center justify-between mb-8">
         <div className="flex items-center gap-1">
           <p className="text-xl text-myaccent font-main font-semibold">
