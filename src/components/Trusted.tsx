@@ -9,7 +9,7 @@ import trustedgrammerly from '../../public/trustedgrammerly.svg';
 
 const Trusted = () => {
   return (
-    <Wrapper className="py-6 px-4 flex flex-col lg:flex-row gap-10 justify-between items-center">
+    <Wrapper className="py-6 px-4 flex flex-col lg:flex-row gap-10 justify-between items-center mb-10">
       <div className="max-w-[400px] lg:max-w-[200px] text-base min-[500px]:text-lg lg:text-xl text-mytext font-default font-semibold text-center lg:text-start">
         More than 100+ companies partners
       </div>

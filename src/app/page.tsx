@@ -1,4 +1,5 @@
 import BgPatterns from '@/components/BgPatterns';
+import Features from '@/components/Features';
 import Hero from '@/components/Hero';
 import Nav from '@/components/Nav';
 import Sidebar from '@/components/Sidebar';
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <BgPatterns />
       <Trusted />
+      <Features />
     </main>
   );
 }
