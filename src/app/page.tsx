@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import Integrations from '@/components/Integrations';
 import Nav from '@/components/Nav';
 import Sidebar from '@/components/Sidebar';
+import Testimony from '@/components/Testimony';
 import Trusted from '@/components/Trusted';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Trusted />
       <Features />
       <Integrations />
+      <Testimony />
     </main>
   );
 }
