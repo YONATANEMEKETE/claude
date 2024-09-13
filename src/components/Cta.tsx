@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 
 const Cta = () => {
   return (
-    <div className="py-20 bg-myctabg mt-20">
+    <div className="py-20 bg-myaccent mt-20">
       <Wrapper className="flex items-center justify-between">
         <div className="basis-1/2 text-[2.5rem] text-white font-default font-semibold">
           Discover the full scale of{' '}
