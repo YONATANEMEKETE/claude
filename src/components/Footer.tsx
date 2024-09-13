@@ -9,8 +9,8 @@ import { RiInstagramFill } from 'react-icons/ri';
 const Footer = () => {
   return (
     <div className="min-h-[400px] bg-myfooterbg pt-20 pb-10">
-      <Wrapper className="flex flex-col gap-y-24">
-        <div className="flex items-start justify-between">
+      <Wrapper className="flex flex-col gap-y-24 px-4">
+        <div className="flex flex-col gap-y-16 md:flex-row items-start justify-between">
           <div className="space-y-10">
             <div className="flex items-center gap-3 cursor-pointer">
               <div className="size-9 bg-myaccent2/40 rounded-lg grid place-content-center">
@@ -42,7 +42,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex items-start gap-40">
+          <div className="flex items-start flex-wrap justify-start gap-10 md:gap-20 lg:gap-40">
             <div className="space-y-10">
               <div className="text-lg text-white font-default font-semibold">
                 Solution

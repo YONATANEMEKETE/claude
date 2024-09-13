@@ -5,15 +5,15 @@ import { Button } from './ui/button';
 const Cta = () => {
   return (
     <div className="py-20 bg-myaccent mt-20">
-      <Wrapper className="flex items-center justify-between">
-        <div className="basis-1/2 text-[2.5rem] text-white font-default font-semibold">
+      <Wrapper className="flex flex-col gap-y-8 md:flex-row items-center justify-between px-4">
+        <div className="md:basis-1/2 max-w-[600px] text-center md:text-start text-3xl lg:text-[2.5rem] lg:leading-relaxed text-white font-default font-semibold">
           Discover the full scale of{' '}
           <span className="underline underline-offset-4 decoration-myaccent2">
             Clause
           </span>{' '}
           Capablities
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-y-5 min-[450px]:flex-row items-center gap-3">
           <Button
             variant={'default'}
             size={'lg'}
