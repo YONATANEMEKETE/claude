@@ -5,7 +5,7 @@ const Testimony = () => {
   return (
     <div className="mt-20 py-8 size-max mx-auto flex flex-col items-center gap-10">
       <Quote size={40} className="text-myaccent" />
-      <p className="text-3xl text-myaccent font-default font-bold max-w-[900px] text-center leading-relaxed">
+      <p className="text-lg md:text-2xl lg:text-3xl text-myaccent font-default font-bold max-w-[300px] min-[450px]:max-w-[450px] md:max-w-[600px] lg:max-w-[900px] text-center leading-relaxed">
         &quot;Clause is helping our company to decrease operational expenses and
         turnaround time, while increasing the compeliance, resource allocations
         and effectivness of our contract managment.&quot;
