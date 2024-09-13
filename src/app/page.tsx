@@ -1,4 +1,5 @@
 import BgPatterns from '@/components/BgPatterns';
+import Cta from '@/components/Cta';
 import Features from '@/components/Features';
 import Hero from '@/components/Hero';
 import Integrations from '@/components/Integrations';
@@ -20,6 +21,7 @@ export default function Home() {
       <Integrations />
       <Testimony />
       <Stats />
+      <Cta />
     </main>
   );
 }
