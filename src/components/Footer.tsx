@@ -52,20 +52,22 @@ const Footer = () => {
         <div className="flex flex-col gap-y-16 md:flex-row items-start justify-between">
           <FadeIn direction="up" duration={0.6}>
             <div className="space-y-10">
-              <div className="flex items-center gap-3 cursor-pointer">
-                <div className="size-9 bg-myaccent2/40 rounded-lg grid place-content-center">
-                  <Image
-                    src={logo}
-                    alt="logo"
-                    width={28}
-                    height={28}
-                    className="object-contain"
-                  />
+              <Link href="/">
+                <div className="flex items-center gap-3 cursor-pointer">
+                  <div className="size-9 bg-myaccent2/40 rounded-lg grid place-content-center">
+                    <Image
+                      src={logo}
+                      alt="logo"
+                      width={28}
+                      height={28}
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-white text-xl md:text-2xl font-default font-semibold">
+                    Clause
+                  </p>
                 </div>
-                <p className="text-white text-xl md:text-2xl font-default font-semibold">
-                  Clause
-                </p>
-              </div>
+              </Link>
               <div className="space-y-5">
                 <motion.div
                   className="flex items-center gap-3 cursor-pointer"
