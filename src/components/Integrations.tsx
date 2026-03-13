@@ -25,9 +25,6 @@ import { FadeIn } from './animations';
 
 const integrations1 = [int1, int2, int3, int4, int5, int6, int7, int8, int9];
 const integrations2 = [
-  int7,
-  int8,
-  int9,
   int10,
   int11,
   int12,
@@ -36,10 +33,15 @@ const integrations2 = [
   int17,
   int18,
   int19,
-  int7,
-  int8,
-  int9,
+  int1,
+  int2,
+  int3,
+  int4,
 ];
+
+// Duplicate arrays for seamless infinite scroll (2 copies needed)
+const scrollRow1 = [...integrations1, ...integrations1];
+const scrollRow2 = [...integrations2, ...integrations2];
 
 const Integrations = () => {
   return (
@@ -85,54 +87,42 @@ const Integrations = () => {
           </FadeIn>
         </div>
 
-        <div className="space-y-8 pt-6">
-          <motion.div
-            className="flex items-center gap-16 flex-nowrap justify-center mx-1 overflow-hidden"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            {integrations1.map((logo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                  ease: 'easeOut',
-                }}
-              >
-                <IntegrationCard logo={logo} />
-              </motion.div>
-            ))}
-          </motion.div>
+        <div className="space-y-8 pt-6 overflow-hidden">
+          {/* First row - scrolls left */}
+          <div className="flex items-center gap-16 flex-nowrap w-full">
+            <motion.div
+              className="flex items-center gap-16 flex-nowrap flex-shrink-0"
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: 'linear',
+                repeatType: 'loop',
+              }}
+            >
+              {scrollRow1.map((logo, index) => (
+                <IntegrationCard key={index} logo={logo} />
+              ))}
+            </motion.div>
+          </div>
 
-          <motion.div
-            className="flex items-center gap-16 flex-nowrap justify-center mx-1 overflow-hidden"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-          >
-            {integrations2.map((logo, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                  ease: 'easeOut',
-                }}
-              >
-                <IntegrationCard logo={logo} />
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Second row - scrolls right */}
+          <div className="flex items-center gap-16 flex-nowrap w-full">
+            <motion.div
+              className="flex items-center gap-16 flex-nowrap flex-shrink-0"
+              animate={{ x: ['-50%', '0%'] }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: 'linear',
+                repeatType: 'loop',
+              }}
+            >
+              {scrollRow2.map((logo, index) => (
+                <IntegrationCard key={index} logo={logo} />
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import { FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import { RiInstagramFill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 import { FadeIn } from './animations';
+import Link from 'next/link';
 
 const socialIcons = [
   { icon: FaTwitter, delay: 0.1 },
@@ -20,11 +21,23 @@ const socialIcons = [
 const footerLinks = [
   {
     title: 'Solution',
-    links: ['Why cequence', 'features', 'OpenAI', 'Technology', 'Security'],
+    links: [
+      { name: 'Why cequence', href: '/solutions#features' },
+      { name: 'features', href: '/solutions#features' },
+      { name: 'OpenAI', href: '/solutions#open-ai' },
+      { name: 'Technology', href: '/solutions#technology' },
+      { name: 'Security', href: '/solutions#security' },
+    ],
   },
   {
     title: 'Customers',
-    links: ['Procurment', 'Sales', 'Legal', 'Medium', 'Enterprize'],
+    links: [
+      { name: 'Procurment', href: '/customers#sales' },
+      { name: 'Sales', href: '/customers#sales' },
+      { name: 'Legal', href: '/customers#legal' },
+      { name: 'Medium', href: '/customers#medium' },
+      { name: 'Enterprize', href: '/customers#enterprise' },
+    ],
   },
   {
     title: 'resources',
@@ -97,7 +110,7 @@ const Footer = () => {
                   <div className="space-y-5">
                     {section.links.map((link, linkIndex) => (
                       <motion.p
-                        key={link}
+                        key={typeof link === 'string' ? link : link.name}
                         className="text-base text-white/90 font-default cursor-pointer hover:text-white transition-colors duration-300"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -108,7 +121,13 @@ const Footer = () => {
                         }}
                         whileHover={{ x: 5 }}
                       >
-                        {link}
+                        {typeof link === 'string' ? (
+                          link
+                        ) : (
+                          <Link href={link.href} className="hover:text-white">
+                            {link.name}
+                          </Link>
+                        )}
                       </motion.p>
                     ))}
                   </div>

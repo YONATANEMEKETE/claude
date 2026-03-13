@@ -42,21 +42,21 @@ const Nav = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <NavLink text="Solutions" />
+                <NavLink text="Solutions" href="/solutions" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <NavLink text="Customers" />
+                <NavLink text="Customers" href="/customers" />
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <NavLink text="Pricing" />
+                <NavLink text="Pricing" href="/pricing" />
               </motion.div>
             </div>
           </div>

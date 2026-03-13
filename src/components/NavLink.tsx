@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import React from 'react';
+import Link from 'next/link';
 
 interface Props {
   text: string;
@@ -10,7 +11,7 @@ interface Props {
 
 const NavLink = ({ text, href }: Props) => {
   return (
-    <div className="relative group cursor-pointer">
+    <Link href={href || '#'} className="relative group cursor-pointer">
       <p className="text-base text-mytext font-default font-semibold hover:text-myaccent transition-colors duration-300">
         {text}
       </p>
@@ -20,7 +21,7 @@ const NavLink = ({ text, href }: Props) => {
         whileHover={{ width: '100%' }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       />
-    </div>
+    </Link>
   );
 };
 
