@@ -1,3 +1,5 @@
+'use client';
+
 import { Grid2x2X, LayoutPanelLeft, Zap } from 'lucide-react';
 import React from 'react';
 import { Button } from './ui/button';
@@ -5,32 +7,46 @@ import FeaturesChart1 from './FeaturesChart1';
 import FeaturesCard from './FeaturesCard';
 import Card1 from './Card1';
 import Card2 from './Card2';
+import { FadeIn } from './animations';
+import { motion } from 'framer-motion';
 
 const Features = () => {
   return (
     <div className="bg-mybg pt-20 space-y-20">
       <div className="mx-auto size-max flex flex-col items-center gap-6">
-        <div className="px-4 py-1 bg-white border-[1px] border-myaccent/30 rounded-full flex items-center gap-2">
-          <Grid2x2X className="size-5 text-myaccent" />
-          <p className="text-base text-myaccent font-main font-bold">
-            FEATURES
-          </p>
-        </div>
+        <FadeIn direction="down" duration={0.6}>
+          <div className="px-4 py-1 bg-white border-[1px] border-myaccent/30 rounded-full flex items-center gap-2">
+            <Grid2x2X className="size-5 text-myaccent" />
+            <p className="text-base text-myaccent font-main font-bold">
+              FEATURES
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="space-y-6">
-          <div className="text-xl min-[400px]:text-2xl md:text-[2rem] lg:text-[3rem] lg:leading-tight  text-mytext font-main font-semibold max-w-[300px] min-[450px]:max-w-[500px] lg:max-w-[700px] text-center mx-auto">
-            Latest Advanced technologies to ensure everything you need
-          </div>
+          <FadeIn direction="up" delay={0.1} duration={0.7}>
+            <div className="text-xl min-[400px]:text-2xl md:text-[2.5rem] lg:text-[3rem] lg:leading-tight  text-mytext font-main font-semibold max-w-[300px] min-[450px]:max-w-[500px] lg:max-w-[700px] text-center mx-auto">
+              Latest Advanced technologies to ensure everything you need
+            </div>
+          </FadeIn>
 
-          <p className="text-xs min-[400px]:text-sm md:text-base lg:text-lg  text-myaccent font-default font-medium max-w-[300px] min-[450px]:max-w-[450px] lg:max-w-[600px] text-center mx-auto">
-            Maximize your teams productivity ans security with our affordable,
-            user friendly contract managment system.
-          </p>
+          <FadeIn direction="up" delay={0.2} duration={0.7}>
+            <p className="text-xs min-[400px]:text-sm md:text-base lg:text-lg  text-myaccent font-default font-medium max-w-[300px] min-[450px]:max-w-[450px] lg:max-w-[600px] text-center mx-auto">
+              Maximize your teams productivity ans security with our affordable,
+              user friendly contract managment system.
+            </p>
+          </FadeIn>
         </div>
       </div>
 
       <div className="space-y-8">
-        <div className="relative max-w-[1200px] mx-5 min-[1200px]:mx-auto px-12 pt-16 pb-8 bg-mycardbg rounded-xl">
+        <motion.div
+          className="relative max-w-[1200px] mx-5 min-[1200px]:mx-auto px-12 pt-16 pb-8 bg-mycardbg rounded-xl overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="relative w-full lg:w-[40%] space-y-24 lg:ml-0 mx-auto lg:text-start text-center">
             <div className="space-y-6">
               <h1 className="text-[1.5rem] md:text-[2.5rem] text-mytext font-default font-bold">
@@ -53,9 +69,15 @@ const Features = () => {
           </div>
 
           <FeaturesChart1 />
-        </div>
+        </motion.div>
 
-        <div className="max-w-[1200px] mx-4 min-[1200px]:mx-auto flex flex-col md:flex-row gap-y-4 justify-between">
+        <motion.div
+          className="max-w-[1200px] mx-4 min-[1200px]:mx-auto flex flex-col md:flex-row gap-y-4 justify-between"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+        >
           <FeaturesCard
             title="Smart notifications"
             description="Easily accessible from the notification center, calendar or email with
@@ -67,7 +89,7 @@ const Features = () => {
             description="Discuss contract queries, manage tasks, secure approvals and track progress in the workplace"
             below={<Card2 />}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

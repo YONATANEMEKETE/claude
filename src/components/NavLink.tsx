@@ -1,43 +1,25 @@
-import { ChevronDown } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
 import React from 'react';
 
 interface Props {
-  more?: boolean;
-  links?: string[];
   text: string;
+  href?: string;
 }
 
-const NavLink = ({ more = false, text, links }: Props) => {
-  if (more) {
-    return (
-      <div className="relative">
-        <div className="peer group flex items-center gap-1  cursor-pointer">
-          <p className="text-base text-mytext font-default font-semibold hover:text-myaccent">
-            {text}
-          </p>
-          <ChevronDown className="group-hover:rotate-180 transition-all duration-200" />
-        </div>
-
-        <div
-          className="absolute top-12 -left-8 opacity-0 peer-hover:opacity-100 peer-hover:top-6 peer-hover:z-10 hover:z-10 hover:top-6 hover:opacity-100
-        p-1 w-[200px] bg-mycardbg  shadow-lg rounded-lg border border-myaccent transition-all duration-200"
-        >
-          {links?.map((link) => (
-            <div
-              key={link}
-              className="px-2 py-2 w-full hover:bg-myaccent/60 text-mytext hover:text-myaccent2   text-base font-default font-semibold rounded-lg cursor-pointer"
-            >
-              {link}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
+const NavLink = ({ text, href }: Props) => {
   return (
-    <div className="text-base text-mytext font-default font-semibold cursor-pointer hover:text-myaccent">
-      {text}
+    <div className="relative group cursor-pointer">
+      <p className="text-base text-mytext font-default font-semibold hover:text-myaccent transition-colors duration-300">
+        {text}
+      </p>
+      <motion.div
+        className="absolute -bottom-1 left-0 h-[2px] bg-myaccent"
+        initial={{ width: 0 }}
+        whileHover={{ width: '100%' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      />
     </div>
   );
 };
