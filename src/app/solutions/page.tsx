@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import Sidebar from '@/components/Sidebar';
 import Footer from '@/components/Footer';
@@ -137,16 +138,20 @@ export default function SolutionsPage() {
                 variant={'default'}
                 size={'lg'}
                 className="bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-lg font-main rounded-xl shadow-lg py-8"
+                asChild
               >
-                Explore Features
-                <ArrowRight className="ml-2 size-4" />
+                <Link href="/pricing">
+                  Explore Features
+                  <ArrowRight className="ml-2 size-4" />
+                </Link>
               </Button>
               <Button
                 variant={'default'}
                 size={'lg'}
                 className="bg-white hover:bg-white text-myaccent text-lg font-main font-semibold rounded-xl shadow-lg py-8"
+                asChild
               >
-                Watch Demo
+                <Link href="/pricing">Watch Demo</Link>
               </Button>
             </div>
           </FadeIn>

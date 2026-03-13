@@ -2,6 +2,7 @@
 
 import { Grid2x2X, LayoutPanelLeft, Zap } from 'lucide-react';
 import React from 'react';
+import Link from 'next/link';
 import { Button } from './ui/button';
 import FeaturesChart1 from './FeaturesChart1';
 import FeaturesCard from './FeaturesCard';
@@ -63,8 +64,9 @@ const Features = () => {
               variant={'default'}
               size={'lg'}
               className="bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-base font-main rounded-lg"
+              asChild
             >
-              Explore All
+              <Link href="/pricing">Explore All</Link>
             </Button>
           </div>
 

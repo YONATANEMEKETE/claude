@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button } from './ui/button';
+import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import useSidebar from '@/Services/SidebarStore';
 
@@ -10,29 +10,24 @@ const NavButtons = () => {
 
   return (
     <div className="flex items-center gap-x-4">
-      <Button
-        variant={'default'}
-        size={'lg'}
-        className="hidden lg:block bg-white hover:bg-white text-myaccent text-base font-default font-semibold rounded-lg shadow-lg px-4"
+      <Link
+        href="/pricing"
+        className="hidden lg:block px-5 py-2.5 bg-white hover:bg-gray-50 text-myaccent text-base font-default font-semibold rounded-lg shadow-lg transition-colors"
       >
         Log In
-      </Button>
-      <Button
-        variant={'default'}
-        size={'lg'}
-        className="hidden md:block px-4 lg:px-6 bg-myaccent hover:bg-myaccent/80 text-myaccent2 text-base font-main font-semibold rounded-lg shadow-lg"
+      </Link>
+      <Link
+        href="/pricing"
+        className="hidden md:block px-5 py-2.5 bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-base font-main font-semibold rounded-lg shadow-lg transition-colors"
       >
         Start Now
-      </Button>
-      <Button
-        variant={'outline'}
-        size="icon"
-        className="lg:hidden bg-transparent hover:bg-transparent border-myaccent cursor-pointer"
+      </Link>
+      <button
+        className="lg:hidden p-2 text-myaccent cursor-pointer"
         onClick={() => OpenSidebar()}
-        asChild
       >
-        <Menu />
-      </Button>
+        <Menu className="size-6" />
+      </button>
     </div>
   );
 };

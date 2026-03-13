@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Wrapper from './Wrapper';
 import { Button } from './ui/button';
 
@@ -18,15 +19,17 @@ const Cta = () => {
             variant={'default'}
             size={'lg'}
             className="bg-white hover:bg-white text-myaccent text-lg font-default font-semibold rounded-xl shadow-lg py-7"
+            asChild
           >
-            Get a Demo
+            <Link href="/pricing">Get a Demo</Link>
           </Button>
           <Button
             variant={'default'}
             size={'lg'}
             className="bg-myaccent2 hover:bg-myaccent2/80 text-myaccent text-lg font-default font-semibold rounded-xl shadow-lg py-7"
+            asChild
           >
-            Start For Free
+            <Link href="/pricing">Start For Free</Link>
           </Button>
         </div>
       </Wrapper>

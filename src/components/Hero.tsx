@@ -2,6 +2,7 @@
 
 import { Zap } from 'lucide-react';
 import React from 'react';
+import Link from 'next/link';
 import { Button } from './ui/button';
 import HeroAvatar from './HeroAvatar';
 import { FadeIn } from './animations';
@@ -46,15 +47,17 @@ const Hero = () => {
               variant={'default'}
               size={'lg'}
               className="bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-lg font-main  rounded-xl shadow-lg py-8"
+              asChild
             >
-              Start for Free
+              <Link href="/pricing">Start for Free</Link>
             </Button>
             <Button
               variant={'default'}
               size={'lg'}
               className="bg-white hover:bg-white text-myaccent text-lg font-main font-semibold rounded-xl shadow-lg py-8"
+              asChild
             >
-              Get a Demo
+              <Link href="/pricing">Get a Demo</Link>
             </Button>
           </div>
         </FadeIn>

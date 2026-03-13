@@ -40,8 +40,10 @@ const footerLinks = [
     ],
   },
   {
-    title: 'resources',
-    links: ['Pricing', 'Contact Sales', 'Chanellog', 'Blog'],
+    title: 'Company',
+    links: [
+      { name: 'Pricing', href: '/pricing' },
+    ],
   },
 ];
 
