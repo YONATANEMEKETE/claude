@@ -146,6 +146,7 @@ const LoginPage = () => {
             )}
           </Button>
 
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <p className="text-center text-[hsl(var(--mytextgray))] font-medium text-sm">
             Don't have an account?{' '}
             <Link

@@ -265,6 +265,7 @@ export default function CustomersPage() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.2} duration={0.7}>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               <p className="text-xs min-[400px]:text-sm md:text-base lg:text-lg text-myaccent font-default font-medium max-w-[300px] min-[450px]:max-w-[450px] lg:max-w-[600px] text-center mx-auto">
                 Whether you're a startup or enterprise, we have the tools and
                 expertise to help you succeed.
