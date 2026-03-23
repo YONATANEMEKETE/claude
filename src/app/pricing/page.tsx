@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '@/components/Nav';
 import Sidebar from '@/components/Sidebar';
 import Footer from '@/components/Footer';
 import Trusted from '@/components/Trusted';
 import Cta from '@/components/Cta';
+import BgPatterns from '@/components/BgPatterns';
 import { motion } from 'framer-motion';
 import { FadeIn, ScaleIn } from '@/components/animations';
 import {
@@ -25,7 +26,8 @@ const plans = [
     id: 'starter',
     name: 'Starter',
     description: 'Perfect for small teams getting started',
-    price: '$29',
+    monthlyPrice: '$29',
+    annualPrice: '$23',
     period: '/month',
     icon: Building2,
     color: 'from-blue-500 to-cyan-600',
@@ -45,7 +47,8 @@ const plans = [
     id: 'professional',
     name: 'Professional',
     description: 'Best for growing businesses',
-    price: '$79',
+    monthlyPrice: '$79',
+    annualPrice: '$63',
     period: '/month',
     icon: Crown,
     color: 'from-violet-500 to-purple-600',
@@ -65,7 +68,8 @@ const plans = [
     id: 'enterprise',
     name: 'Enterprise',
     description: 'For large organizations',
-    price: 'Custom',
+    monthlyPrice: 'Custom',
+    annualPrice: 'Custom',
     period: '',
     icon: Briefcase,
     color: 'from-orange-500 to-amber-600',
@@ -107,6 +111,12 @@ const faqs = [
 ];
 
 export default function PricingPage() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
+  const toggleBilling = () => {
+    setIsAnnual(!isAnnual);
+  };
+
   return (
     <main className="font-default relative overflow-clip min-h-screen">
       <Nav />
@@ -145,11 +155,24 @@ export default function PricingPage() {
 
           <FadeIn direction="up" delay={0.4} duration={0.7}>
             <div className="flex items-center gap-4">
-              <span className="text-myaccent font-default">Monthly</span>
-              <div className="w-14 h-8 bg-myaccent rounded-full p-1">
-                <div className="w-6 h-6 bg-white rounded-full" />
-              </div>
-              <span className="text-mytext font-default font-semibold">
+              <span
+                className={`${!isAnnual ? 'text-mytext font-default font-semibold' : 'text-myaccent font-default'}`}
+              >
+                Monthly
+              </span>
+              <button
+                onClick={toggleBilling}
+                className="w-14 h-8 bg-myaccent rounded-full p-1 cursor-pointer transition-all duration-300 hover:bg-myaccent/90"
+              >
+                <div
+                  className={`w-6 h-6 bg-white rounded-full transition-transform duration-300 ${
+                    isAnnual ? 'translate-x-6' : 'translate-x-0'
+                  }`}
+                />
+              </button>
+              <span
+                className={`${isAnnual ? 'text-mytext font-default font-semibold' : 'text-myaccent font-default'}`}
+              >
                 Annual
               </span>
               <span className="text-emerald-600 text-sm font-semibold bg-emerald-100 px-2 py-1 rounded-full">
@@ -159,6 +182,8 @@ export default function PricingPage() {
           </FadeIn>
         </div>
       </section>
+
+      <BgPatterns />
 
       <Trusted />
 
@@ -206,7 +231,7 @@ export default function PricingPage() {
 
                   <div className="mb-6">
                     <span className="text-4xl font-main font-bold text-mytext">
-                      {plan.price}
+                      {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                     </span>
                     <span className="text-myaccent">{plan.period}</span>
                   </div>
@@ -220,7 +245,9 @@ export default function PricingPage() {
                         : 'border-myaccent text-myaccent hover:bg-myaccent/10'
                     }`}
                   >
-                    {plan.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
+                    {plan.monthlyPrice === 'Custom'
+                      ? 'Contact Sales'
+                      : 'Get Started'}
                     <ArrowRight className="ml-2 size-4" />
                   </Button>
 

@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import Trusted from '@/components/Trusted';
 import Stats from '@/components/Stats';
 import Cta from '@/components/Cta';
+import BgPatterns from '@/components/BgPatterns';
 import { motion } from 'framer-motion';
 import { FadeIn, ScaleIn } from '@/components/animations';
 import {
@@ -158,6 +159,8 @@ export default function SolutionsPage() {
           </FadeIn>
         </div>
       </section>
+
+      <BgPatterns />
 
       <Trusted />
 
