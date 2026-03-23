@@ -19,14 +19,14 @@ const Stats = () => {
           className="flex items-center flex-col gap-2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: index * 0.15 }}
         >
           <motion.h1
             className="text-5xl lg:text-7xl text-myfooterbg font-default font-semibold"
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               duration: 0.7,
               delay: index * 0.15 + 0.2,

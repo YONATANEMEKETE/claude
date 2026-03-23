@@ -45,7 +45,7 @@ const Features = () => {
           className="relative max-w-[1200px] mx-5 min-[1200px]:mx-auto px-12 pt-16 pb-8 bg-mycardbg rounded-xl overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
         >
           <div className="relative w-full lg:w-[40%] space-y-24 lg:ml-0 mx-auto lg:text-start text-center">
@@ -77,7 +77,7 @@ const Features = () => {
           className="max-w-[1200px] mx-4 min-[1200px]:mx-auto flex flex-col md:flex-row gap-y-4 justify-between"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.15 }}
         >
           <FeaturesCard

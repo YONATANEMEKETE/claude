@@ -41,9 +41,7 @@ const footerLinks = [
   },
   {
     title: 'Company',
-    links: [
-      { name: 'Pricing', href: '/pricing' },
-    ],
+    links: [{ name: 'Pricing', href: '/pricing' }],
   },
 ];
 
@@ -75,7 +73,7 @@ const Footer = () => {
                   className="flex items-center gap-3 cursor-pointer"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
                   <MessageSquare className="text-white/90" />
@@ -87,7 +85,7 @@ const Footer = () => {
                   className="flex items-center gap-3 cursor-pointer"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   <PhoneMissed className="text-white/90" />
@@ -118,7 +116,7 @@ const Footer = () => {
                         className="text-base text-white/90 font-default cursor-pointer hover:text-white transition-colors duration-300"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
+                        viewport={{ once: true, amount: 0.3 }}
                         transition={{
                           duration: 0.4,
                           delay: 0.15 + sectionIndex * 0.1 + linkIndex * 0.05,
@@ -145,7 +143,7 @@ const Footer = () => {
           className="flex items-center justify-between"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <p className="text-sm text-white/80 font-default">
@@ -158,7 +156,7 @@ const Footer = () => {
                 key={index}
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{
                   duration: 0.4,
                   delay: 0.6 + social.delay,
