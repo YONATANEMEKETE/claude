@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import Sidebar from '@/components/Sidebar';
 import Footer from '@/components/Footer';
@@ -236,20 +237,22 @@ export default function PricingPage() {
                     <span className="text-myaccent">{plan.period}</span>
                   </div>
 
-                  <Button
-                    variant={plan.popular ? 'default' : 'outline'}
-                    size="lg"
-                    className={`w-full rounded-xl mb-8 ${
-                      plan.popular
-                        ? 'bg-myaccent hover:bg-myaccent/90 text-myaccent2'
-                        : 'border-myaccent text-myaccent hover:bg-myaccent/10'
-                    }`}
-                  >
-                    {plan.monthlyPrice === 'Custom'
-                      ? 'Contact Sales'
-                      : 'Get Started'}
-                    <ArrowRight className="ml-2 size-4" />
-                  </Button>
+                  <Link href="/login">
+                    <Button
+                      variant={plan.popular ? 'default' : 'outline'}
+                      size="lg"
+                      className={`w-full rounded-xl mb-8 ${
+                        plan.popular
+                          ? 'bg-myaccent hover:bg-myaccent/90 text-myaccent2'
+                          : 'border-myaccent text-myaccent hover:bg-myaccent/10'
+                      }`}
+                    >
+                      {plan.monthlyPrice === 'Custom'
+                        ? 'Contact Sales'
+                        : 'Get Started'}
+                      <ArrowRight className="ml-2 size-4" />
+                    </Button>
+                  </Link>
 
                   <div className="space-y-4">
                     {plan.features.map((feature, i) => (

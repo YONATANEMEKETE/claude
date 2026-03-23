@@ -66,7 +66,7 @@ const Features = () => {
               className="bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-base font-main rounded-lg"
               asChild
             >
-              <Link href="/pricing">Explore All</Link>
+              <Link href="/login">Explore All</Link>
             </Button>
           </div>
 

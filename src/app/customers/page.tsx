@@ -189,7 +189,7 @@ export default function CustomersPage() {
                 className="bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-lg font-main rounded-xl shadow-lg py-8"
                 asChild
               >
-                <Link href="/pricing">
+                <Link href="/login">
                   Get Started Free
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
@@ -200,7 +200,7 @@ export default function CustomersPage() {
                 className="bg-white hover:bg-white text-myaccent text-lg font-main font-semibold rounded-xl shadow-lg py-8"
                 asChild
               >
-                <Link href="/pricing">Talk to Sales</Link>
+                <Link href="/login">Talk to Sales</Link>
               </Button>
             </div>
           </FadeIn>

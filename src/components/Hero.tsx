@@ -34,9 +34,9 @@ const Hero = () => {
 
           <FadeIn direction="up" delay={0.3} duration={0.7}>
             <p className="text-sm min-[400px]:text-base md:text-lg lg:text-xl text-myaccent font-default font-medium max-w-[300px] min-[400px]:max-w-[400px] md:max-w-[600px] lg:max-w-[900px] text-center mx-auto">
-              Clause helps legal teams work faster, smarter, and more efficiently.
-              delivering the vissiblity and data driven insights to mitigate risks
-              and ensure compliance.
+              Clause helps legal teams work faster, smarter, and more
+              efficiently. delivering the vissiblity and data driven insights to
+              mitigate risks and ensure compliance.
             </p>
           </FadeIn>
         </div>
@@ -49,7 +49,7 @@ const Hero = () => {
               className="bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-lg font-main  rounded-xl shadow-lg py-8"
               asChild
             >
-              <Link href="/pricing">Start for Free</Link>
+              <Link href="/login">Start for Free</Link>
             </Button>
             <Button
               variant={'default'}
@@ -57,7 +57,7 @@ const Hero = () => {
               className="bg-white hover:bg-white text-myaccent text-lg font-main font-semibold rounded-xl shadow-lg py-8"
               asChild
             >
-              <Link href="/pricing">Get a Demo</Link>
+              <Link href="/login">Get a Demo</Link>
             </Button>
           </div>
         </FadeIn>

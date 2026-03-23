@@ -142,7 +142,7 @@ export default function SolutionsPage() {
                 className="bg-myaccent hover:bg-myaccent/90 text-myaccent2 text-lg font-main rounded-xl shadow-lg py-8"
                 asChild
               >
-                <Link href="/pricing">
+                <Link href="/login">
                   Explore Features
                   <ArrowRight className="ml-2 size-4" />
                 </Link>
@@ -153,7 +153,7 @@ export default function SolutionsPage() {
                 className="bg-white hover:bg-white text-myaccent text-lg font-main font-semibold rounded-xl shadow-lg py-8"
                 asChild
               >
-                <Link href="/pricing">Watch Demo</Link>
+                <Link href="/login">Watch Demo</Link>
               </Button>
             </div>
           </FadeIn>

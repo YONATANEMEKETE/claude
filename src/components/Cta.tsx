@@ -21,7 +21,7 @@ const Cta = () => {
             className="bg-white hover:bg-white text-myaccent text-lg font-default font-semibold rounded-xl shadow-lg py-7"
             asChild
           >
-            <Link href="/pricing">Get a Demo</Link>
+            <Link href="/login">Get a Demo</Link>
           </Button>
           <Button
             variant={'default'}
@@ -29,7 +29,7 @@ const Cta = () => {
             className="bg-myaccent2 hover:bg-myaccent2/80 text-myaccent text-lg font-default font-semibold rounded-xl shadow-lg py-7"
             asChild
           >
-            <Link href="/pricing">Start For Free</Link>
+            <Link href="/login">Start For Free</Link>
           </Button>
         </div>
       </Wrapper>

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 import logo from '../../public/logo.png';
 import { Button } from './ui/button';
 import { X } from 'lucide-react';
@@ -38,9 +39,24 @@ const Sidebar = () => {
           <div className="w-[250px] min-[500px]:w-[350px] md:w-[500px] px-2 py-2 border border-myaccent bg-transparent rounded-lg text-2xl text-myaccent font-main font-semibold cursor-pointer hover:bg-myaccent hover:text-myaccent2 transition-colors duration-200">
             Customers
           </div>
-          <div className="w-[250px] min-[500px]:w-[350px] md:w-[500px] px-2 py-2 border border-myaccent bg-transparent rounded-lg text-2xl text-myaccent font-main font-semibold cursor-pointer hover:bg-myaccent hover:text-myaccent2 transition-colors duration-200">
+          <Link
+            href="/pricing"
+            className="w-[250px] min-[500px]:w-[350px] md:w-[500px] px-2 py-2 border border-myaccent bg-transparent rounded-lg text-2xl text-myaccent font-main font-semibold cursor-pointer hover:bg-myaccent hover:text-myaccent2 transition-colors duration-200"
+          >
             Pricing
-          </div>
+          </Link>
+          <Link
+            href="/login"
+            className="w-[250px] min-[500px]:w-[350px] md:w-[500px] px-2 py-2 border border-myaccent bg-transparent rounded-lg text-2xl text-myaccent font-main font-semibold cursor-pointer hover:bg-myaccent hover:text-myaccent2 transition-colors duration-200"
+          >
+            Log In
+          </Link>
+          <Link
+            href="/signup"
+            className="w-[250px] min-[500px]:w-[350px] md:w-[500px] px-2 py-2 bg-myaccent rounded-lg text-2xl text-myaccent2 font-main font-semibold cursor-pointer hover:bg-myaccent/90 transition-colors duration-200"
+          >
+            Start Now
+          </Link>
         </div>
       </div>
       <div className="w-full px-4 text-start">
