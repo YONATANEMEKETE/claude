@@ -86,19 +86,23 @@ const plans = [
 const faqs = [
   {
     question: 'Can I change plans later?',
-    answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.',
+    answer:
+      'Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.',
   },
   {
     question: 'Is there a free trial?',
-    answer: 'Yes, we offer a 14-day free trial on all plans. No credit card required.',
+    answer:
+      'Yes, we offer a 14-day free trial on all plans. No credit card required.',
   },
   {
     question: 'What payment methods do you accept?',
-    answer: 'We accept all major credit cards, PayPal, and bank transfers for annual plans.',
+    answer:
+      'We accept all major credit cards, PayPal, and bank transfers for annual plans.',
   },
   {
     question: 'Can I cancel anytime?',
-    answer: 'Yes, you can cancel your subscription anytime. Your access continues until the end of your billing period.',
+    answer:
+      'Yes, you can cancel your subscription anytime. Your access continues until the end of your billing period.',
   },
 ];
 
@@ -145,7 +149,9 @@ export default function PricingPage() {
               <div className="w-14 h-8 bg-myaccent rounded-full p-1">
                 <div className="w-6 h-6 bg-white rounded-full" />
               </div>
-              <span className="text-mytext font-default font-semibold">Annual</span>
+              <span className="text-mytext font-default font-semibold">
+                Annual
+              </span>
               <span className="text-emerald-600 text-sm font-semibold bg-emerald-100 px-2 py-1 rounded-full">
                 Save 20%
               </span>
@@ -170,7 +176,7 @@ export default function PricingPage() {
                 }`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
               >
                 {plan.popular && (
@@ -192,7 +198,9 @@ export default function PricingPage() {
                       <h3 className="text-xl font-main font-semibold text-mytext">
                         {plan.name}
                       </h3>
-                      <p className="text-sm text-myaccent">{plan.description}</p>
+                      <p className="text-sm text-myaccent">
+                        {plan.description}
+                      </p>
                     </div>
                   </div>
 

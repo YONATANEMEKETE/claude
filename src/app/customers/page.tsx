@@ -127,7 +127,11 @@ const customers = [
     ],
     color: 'from-orange-500 to-amber-600',
     features: [
-      { icon: Shield, title: 'Enterprise Security', desc: 'Bank-level protection' },
+      {
+        icon: Shield,
+        title: 'Enterprise Security',
+        desc: 'Bank-level protection',
+      },
       { icon: Zap, title: 'Lightning Fast', desc: 'Global CDN' },
       { icon: Award, title: 'Premium Support', desc: 'Dedicated team' },
     ],
@@ -212,14 +216,14 @@ export default function CustomersPage() {
             className="flex items-center flex-col gap-2"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
           >
             <motion.h1
               className="text-5xl lg:text-7xl text-myfooterbg font-default font-semibold"
               initial={{ scale: 0.5, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{
                 duration: 0.7,
                 delay: index * 0.15 + 0.2,
@@ -267,9 +271,15 @@ export default function CustomersPage() {
         </div>
 
         {customers.map((customer, index) => (
-          <Wrapper key={customer.id} className={`px-4 ${index % 2 === 1 ? 'flex flex-col md:flex-row-reverse' : 'flex flex-col md:flex-row'} items-center gap-12`}>
+          <Wrapper
+            key={customer.id}
+            className={`px-4 ${index % 2 === 1 ? 'flex flex-col md:flex-row-reverse' : 'flex flex-col md:flex-row'} items-center gap-12`}
+          >
             <div className="md:basis-1/2 space-y-6">
-              <FadeIn direction={index % 2 === 0 ? 'left' : 'right'} duration={0.6}>
+              <FadeIn
+                direction={index % 2 === 0 ? 'left' : 'right'}
+                duration={0.6}
+              >
                 <div className="flex items-center gap-3">
                   <div
                     className={`size-16 rounded-2xl bg-gradient-to-br ${customer.color} grid place-content-center shadow-xl`}
@@ -307,7 +317,7 @@ export default function CustomersPage() {
                     className="flex items-start gap-3"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.3 }}
                     transition={{
                       duration: 0.4,
                       delay: i * 0.08,
@@ -316,9 +326,7 @@ export default function CustomersPage() {
                     <div className="size-6 rounded-full bg-myaccent/10 grid place-content-center flex-shrink-0 mt-0.5">
                       <CheckCircle className="size-4 text-myaccent" />
                     </div>
-                    <span className="text-mytext font-default">
-                      {benefit}
-                    </span>
+                    <span className="text-mytext font-default">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -372,27 +380,35 @@ export default function CustomersPage() {
               <div className="relative h-[420px] md:h-[520px]">
                 {/* Background decorative elements */}
                 <div className="absolute inset-0">
-                  <div className={`absolute top-4 left-4 w-24 h-24 rounded-2xl bg-gradient-to-br ${customer.color} opacity-20`} />
-                  <div className={`absolute bottom-8 right-8 w-32 h-32 rounded-full bg-gradient-to-br ${customer.color} opacity-10 blur-2xl`} />
-                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-gradient-to-br ${customer.color} opacity-5 blur-3xl`} />
+                  <div
+                    className={`absolute top-4 left-4 w-24 h-24 rounded-2xl bg-gradient-to-br ${customer.color} opacity-20`}
+                  />
+                  <div
+                    className={`absolute bottom-8 right-8 w-32 h-32 rounded-full bg-gradient-to-br ${customer.color} opacity-10 blur-2xl`}
+                  />
+                  <div
+                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-gradient-to-br ${customer.color} opacity-5 blur-3xl`}
+                  />
                 </div>
-                
+
                 {/* Main glass card */}
                 <div className="absolute inset-4 bottom-16 bg-white/80 backdrop-blur-xl rounded-3xl border border-white/40 shadow-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-grid-slate-100/50" />
-                  
+
                   {/* Top bar */}
                   <div className="h-12 border-b border-slate-200/50 flex items-center px-4 gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-400/70" />
                     <div className="w-3 h-3 rounded-full bg-amber-400/70" />
                     <div className="w-3 h-3 rounded-full bg-emerald-400/70" />
                   </div>
-                  
+
                   {/* Content area */}
                   <div className="p-6 space-y-4">
                     {/* Feature rows */}
                     <div className="flex items-center gap-3 p-3 bg-white/60 rounded-xl border border-slate-200/30">
-                      <div className={`size-10 rounded-lg bg-gradient-to-br ${customer.color} flex items-center justify-center`}>
+                      <div
+                        className={`size-10 rounded-lg bg-gradient-to-br ${customer.color} flex items-center justify-center`}
+                      >
                         <customer.icon className="size-5 text-white" />
                       </div>
                       <div className="flex-1">
@@ -400,7 +416,7 @@ export default function CustomersPage() {
                         <div className="h-2 w-16 bg-slate-100 rounded" />
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-3 p-3 bg-white/60 rounded-xl border border-slate-200/30">
                       <div className="size-10 rounded-lg bg-slate-100 flex items-center justify-center">
                         <CheckCircle className="size-5 text-myaccent" />
@@ -410,7 +426,7 @@ export default function CustomersPage() {
                         <div className="h-2 w-28 bg-slate-100 rounded" />
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-3 p-3 bg-white/60 rounded-xl border border-slate-200/30">
                       <div className="size-10 rounded-lg bg-slate-100 flex items-center justify-center">
                         <CheckCircle className="size-5 text-myaccent" />
@@ -420,31 +436,46 @@ export default function CustomersPage() {
                         <div className="h-2 w-24 bg-slate-100 rounded" />
                       </div>
                     </div>
-                    
+
                     {/* Stats bar */}
                     <div className="flex justify-between pt-4 border-t border-slate-200/30">
                       {customer.stats.map((stat, i) => (
                         <div key={i} className="text-center">
-                          <div className={`text-xl font-bold bg-gradient-to-r ${customer.color} bg-clip-text text-transparent`}>{stat.value}</div>
-                          <div className="text-xs text-slate-500">{stat.label}</div>
+                          <div
+                            className={`text-xl font-bold bg-gradient-to-r ${customer.color} bg-clip-text text-transparent`}
+                          >
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-slate-500">
+                            {stat.label}
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Floating accent card */}
                 <motion.div
                   className="absolute -right-2 bottom-4 bg-white p-3 rounded-xl shadow-xl border border-slate-100"
                   animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: index * 0.5 }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: index * 0.5,
+                  }}
                 >
                   <div className="flex items-center gap-2">
-                    <div className={`size-8 rounded-lg bg-gradient-to-br ${customer.color} flex items-center justify-center`}>
+                    <div
+                      className={`size-8 rounded-lg bg-gradient-to-br ${customer.color} flex items-center justify-center`}
+                    >
                       <Zap className="size-4 text-white" fill="currentColor" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-slate-700">{customer.title}</div>
+                      <div className="text-xs font-semibold text-slate-700">
+                        {customer.title}
+                      </div>
                       <div className="text-[10px] text-slate-500">Trusted</div>
                     </div>
                   </div>
